@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AbstractPlugin", "AbstractPlugin", "{5161D79C-E299-4DB4-842C-9CF0ECB607AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbPasswdPlugin", "AbPasswdPlugin\AbPasswdPlugin.csproj", "{B3CA7BC1-0B17-4284-9EE9-2E36BE453112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbTextProcess", "AbTextProcess\AbTextProcess.csproj", "{55C1BDE2-DD6B-4555-8D78-4B1361284B4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{05547CD3-7A96-4823-A15B-E9C8EB949F47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PasswordPlugin", "PasswordPlugin", "{FC7834E1-285F-411E-9BA9-2942F597FA2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBKDF2Cypto", "PBKDF2Cypto\PBKDF2Cypto.csproj", "{A4E176E6-970F-47FF-9E18-F75409B74E29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextProcessPlugin", "TextProcessPlugin", "{A6857AB5-5A3E-4722-AAF5-8253FE9CC575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBB2HTML", "UBB2HTML\UBB2HTML.csproj", "{4F2137D9-8654-4133-A13C-7FF1289B804C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkSellFood", "NetworkSellFood\NetworkSellFood.csproj", "{BD4A8FE1-40E2-4983-9400-4599393EC0AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkSellFood.Tests", "NetworkSellFood.Tests\NetworkSellFood.Tests.csproj", "{D2684E21-DA89-40A6-8DA1-952E6229CFB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseVisited", "DatabaseVisited\DatabaseVisited.csproj", "{F71159A9-39E1-4F43-AD61-2AF0DF3016BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F2137D9-8654-4133-A13C-7FF1289B804C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2137D9-8654-4133-A13C-7FF1289B804C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2137D9-8654-4133-A13C-7FF1289B804C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2137D9-8654-4133-A13C-7FF1289B804C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C1BDE2-DD6B-4555-8D78-4B1361284B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C1BDE2-DD6B-4555-8D78-4B1361284B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C1BDE2-DD6B-4555-8D78-4B1361284B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C1BDE2-DD6B-4555-8D78-4B1361284B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4E176E6-970F-47FF-9E18-F75409B74E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4E176E6-970F-47FF-9E18-F75409B74E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4E176E6-970F-47FF-9E18-F75409B74E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4E176E6-970F-47FF-9E18-F75409B74E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CA7BC1-0B17-4284-9EE9-2E36BE453112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CA7BC1-0B17-4284-9EE9-2E36BE453112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CA7BC1-0B17-4284-9EE9-2E36BE453112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CA7BC1-0B17-4284-9EE9-2E36BE453112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4A8FE1-40E2-4983-9400-4599393EC0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4A8FE1-40E2-4983-9400-4599393EC0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4A8FE1-40E2-4983-9400-4599393EC0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4A8FE1-40E2-4983-9400-4599393EC0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2684E21-DA89-40A6-8DA1-952E6229CFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2684E21-DA89-40A6-8DA1-952E6229CFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2684E21-DA89-40A6-8DA1-952E6229CFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2684E21-DA89-40A6-8DA1-952E6229CFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71159A9-39E1-4F43-AD61-2AF0DF3016BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71159A9-39E1-4F43-AD61-2AF0DF3016BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71159A9-39E1-4F43-AD61-2AF0DF3016BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71159A9-39E1-4F43-AD61-2AF0DF3016BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3CA7BC1-0B17-4284-9EE9-2E36BE453112} = {5161D79C-E299-4DB4-842C-9CF0ECB607AC}
+		{55C1BDE2-DD6B-4555-8D78-4B1361284B4F} = {5161D79C-E299-4DB4-842C-9CF0ECB607AC}
+		{FC7834E1-285F-411E-9BA9-2942F597FA2B} = {05547CD3-7A96-4823-A15B-E9C8EB949F47}
+		{A6857AB5-5A3E-4722-AAF5-8253FE9CC575} = {05547CD3-7A96-4823-A15B-E9C8EB949F47}
+		{A4E176E6-970F-47FF-9E18-F75409B74E29} = {FC7834E1-285F-411E-9BA9-2942F597FA2B}
+		{4F2137D9-8654-4133-A13C-7FF1289B804C} = {A6857AB5-5A3E-4722-AAF5-8253FE9CC575}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		StartupItem = NetworkSellFood\NetworkSellFood.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,68 @@
+﻿@model NetworkSellFood.WebUser
+@{
+    ViewBag.Title = "安全邮箱修改";
+    Layout = "~/Views/Shared/userinfo.cshtml";
+    var email = (NetworkSellFood.WebUserEmail)ViewData ["email"];
+    var status = Request.QueryString["status"];
+}
+@section headuser{
+<script src="/Content/scripts/se.js" type="text/javascript"></script>
+	@if(status != null){
+	    if(status == "fail"){
+	   <script type="text/javascript">
+	   alert('邮箱验证失败');
+	   </script>
+	   }else{
+	   <script type="text/javascript">
+	   alert('邮箱验证成功');
+	   </script>
+	   }
+	}
+}
+<div class="panlarea">
+<form id="frmse" role="form" class="form-group" method="post">
+<ul>
+<li><label class="labels">安全邮箱</label>
+@if(email ==null){
+<label class="label labelextra alert alert-danger">您还没有填写email</label>
+}else{
+	if(ViewData["IsChecked"].Equals(true)){
+	<label class="label labelextra alert alert-success">@(email.EmailAddress)</label>
+	}else{
+	<label class="label labelextra alert alert-danger">@(email.EmailAddress)</label>
+	<button id="btnResend" type="button" class="btn btn-primary" data-loading-text="发送中……">重新发送</button>
+	}
+}</li>
+<li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chgdlg">修改邮箱</button></li>
+</ul>
+<div class="modal fade" id="chgdlg" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               填写邮箱信息
+            </h4>
+         </div>
+         <div class="modal-body">
+            <div class="alert alert-warning">警告！填写并提交后将导致先前的邮箱验证失效</div>
+            <input type="text" name="email" id="txtemail" class="form-control" placeholder="请在此处填写邮箱" />
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button id="btnOK" type="button" class="btn btn-primary">
+               确认并提交
+            </button>
+         </div>
+      </div>
+</div>
+</div>
+</form>
+</div>
+

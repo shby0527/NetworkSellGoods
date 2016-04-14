@@ -1,0 +1,13 @@
+﻿@model NetworkSellFood.WebUser
+@{
+    if(Model != null){
+    	ViewBag.Title = "欢迎 "+Model.NickName+" 的到来";
+    }else{
+    	ViewBag.Title = "欢迎游客";
+    }
+    ViewBag.Footer = true;
+    Layout = "~/Views/Shared/master.cshtml";
+}
+@section head{
+}
+<div>菜单区</div>

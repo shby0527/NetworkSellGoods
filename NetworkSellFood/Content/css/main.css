@@ -1,0 +1,112 @@
+﻿body{
+	margin: 0 0;
+	padding: 0 0;
+	background:#eee;
+}
+#userTips{
+	height: 2em;
+	width: 100%;
+	position: fixed;
+	background:#388bf1;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+#userTips a{
+color:#fff;
+}
+#userInfo{
+list-style: none;
+float: right;
+margin: 0 0;
+padding-top: 4px;
+padding-right: 4px;
+}
+#userInfo li{
+float: left;
+padding-right: 6px;
+margin: 0 0;
+}
+#userInfo li a{
+max-width:60px;
+overflow: hidden;
+height: 20px;
+display: inline-block;
+}
+#content{
+min-height: 600px;
+padding-top: 2em;
+}
+#footer{
+width: 100%;
+background-color: #aaa;
+height: 8em;
+}
+.logintitle{
+height: 40px;
+background-color: #6cf;
+color: white;
+line-height: 40px;
+font-size: larger;
+border-bottom-color: pink;
+border-bottom-style: solid;
+border-bottom-width: 4px;
+width:100%;
+}
+.icon{
+display:inline-block;
+width:34px;
+height:34px;
+margin-left:8px;
+background:url('/Content/images/m.png');
+background-size: 30px 30px;
+background-repeat: no-repeat;
+}
+.icon + label{
+position: relative;
+top: -8px;
+}
+#logo{
+display: inline-block;
+width: 48px;
+height: 24px;
+color: #fff;
+margin: 2px 0 0 2px;
+font-weight: 700;
+}
+.labels{
+display: inline-block;
+width: 68px;
+text-align: right;
+padding-right: 4px;
+}
+.loginarea{
+width: 416px;
+margin: 0 auto;
+border-color: #ccc;
+border-style: solid;
+border-width: 1px;
+background-color: white;
+margin-top: 7.4em;
+padding: 40px;
+border-radius: 10%;
+}
+.loginarea ul{
+margin: 0 0;
+list-style: none;
+padding-left:0;
+}
+.loginarea ul li{
+padding-bottom: 14px;
+}
+
+.loginarea ul li input[type="text"],input[type="password"]{
+width: 260px;
+height: 24px;
+display:inline-block;
+}
+.imgvcode{
+display: inline-block;
+position: relative;
+cursor: pointer;
+}

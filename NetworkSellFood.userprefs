@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="NetworkSellFood/NetworkSellFood.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-stable" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/Views/Web.config">
+    <Files>
+      <File FileName="NetworkSellFood/DatabaseOption/UserOption.cs" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/DatabaseOption/ShopOption.cs" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/DatabaseOption/AdminOption.cs" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Views/UserManage/UserManageMain.cshtml" Line="11" Column="1" />
+      <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="8" Column="1" />
+      <File FileName="NetworkSellFood/Views/Web.config" Line="4" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

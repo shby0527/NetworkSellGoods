@@ -1,0 +1,13 @@
+#btnLogin{
+width:100%;
+height:30px;
+}
+#lblrem{
+position: relative;
+left: 24px;
+}
+#lblfo{
+position: relative;
+float: right;
+right: 24px;
+}

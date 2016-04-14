@@ -1,0 +1,44 @@
+﻿@model NetworkSellFood.WebUser
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="美兹兹,美食城,点餐系统" />
+<meta name="description" content="提供点餐，送餐，以及食客之间的交流用处" />
+<meta name="author" content="Hayama Umi" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link type="text/css" href="/Content/jqui/jquery-ui.min.css" rel="stylesheet" />
+<link type="text/css" href="/Content/css/main.css" rel="stylesheet" />
+<script type="text/javascript" src="/Scripts/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/Scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/Content/bootstrap/scripts/bootstrap.min.js"></script>
+<title>@(ViewBag.Title)</title>
+@RenderSection("head",true)
+</head>
+<body>
+<div id="userTips">
+<a id="logo" href="/">美兹兹</a>
+<ul id="userInfo">
+@if(Model != null){
+<li><a href="/UserOpt/AvatorUp"><img class="img-circle" style="width:20px;height:20px;" src="/ava/@(Model.UID)" alt="用户头像" /></a></li>
+<li><a href="/UserOpt/UserInfo">@(Model.NickName)</a></li>
+<li><a href="/ShopOpt/MyCart">购物车</a></li>
+<li><a href="/ShopOpt/MyIndent">我的订单</a></li>
+<li><a href="/UserOpt/LogOut">退出</a></li>
+}else{
+<li><a href="/UserOpt/LoginPage">登录</a></li>
+<li><a href="/UserOpt/Register">注册</a></li>
+}
+</ul>
+</div>
+<div id="content">
+@RenderBody()
+</div>
+@if(ViewBag.Footer){
+<div id="footer"></div>
+}
+<div style="clear:both"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model NetworkSellFood.WebUser
+
+@{
+    ViewBag.Title = "用户注册";
+    ViewBag.Footer = true;
+    Layout = "~/Views/Shared/master.cshtml";
+}
+@section head{
+<link href="/Content/css/register.css" type="text/css" rel="stylesheet" />
+<script src="/Content/scripts/register.js" type="text/javascript"></script>
+}
+<div class="logintitle"><a class="icon"></a><label>用户注册</label></div>
+<div class="loginarea">
+<form role="form" class="form-group">
+<ul>
+<li>
+<label class="labels">用户名</label>
+<input type="text" id="txtuser" name="username" maxlength="20" placeholder="请输入用户名"  class="form-control"  />
+</li>
+<li>
+<label class="labels">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+<input  type="password" id="txtpwd" name="passwd" maxlength="20" placeholder="请输入密码" class="form-control" />
+</li>
+<li>
+<label class="labels">确认密码</label>
+<input  type="password" id="txtpwdagn" name="passwd" maxlength="20" placeholder="请输入确认密码" class="form-control" />
+</li>
+<li>
+<label class="labels">验证码</label>
+<input  type="text" id="txtvail" name="vcode" style="width:174px;" placeholder="请输入验证码" class="form-control" />
+ <img id="imgvcode" src="/Home/VailCode" alt="验证码" title="看不清？换一个" class="img-rounded imgvcode" />
+ </li>
+<li><button class="btn btn-primary" id="btnRegister" type="button">注册</button></li>
+</ul>
+</form>
+</div>

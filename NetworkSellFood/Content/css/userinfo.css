@@ -1,0 +1,71 @@
+﻿#UserLeft{
+height: 100%;
+position: fixed;
+width: 16em;
+background-color: #666;
+}
+#UserLeft ul{
+margin: 0 0;
+padding-top: 10px;
+list-style: none;
+width: 160px;
+}
+#UserLeft ul label{
+font-size: 24px;
+color: white;
+font-weight: 400;
+}
+#UserLeft ul li{
+padding-top: 8px;
+text-align: center;
+}
+#UserLeft ul li a{
+color: white;
+font-size: 16px;
+}
+#UserRight{
+padding-left: 16em;
+}
+.panlarea{
+background-color: white;
+width: 800px;
+margin:0 auto;
+padding: 12px 20px;
+margin-top: 4em;
+border-radius: 24px;
+text-align: center;
+border-color: #ccc;
+border-style: solid;
+border-width: 2px;
+}
+.panlarea ul{
+list-style: none;
+margin: 0 0;
+}
+.panlarea ul li,.linecotrol{
+padding-bottom: 16px;
+}
+.labelextra{
+color:#000;
+display:inline-block;
+width:160px;
+}
+#txtnick{
+width:160px;
+display:inline-block;
+}
+.inlineblock{
+display:inline-block;
+width:80%;
+}
+.labeltextarea{
+position: relative;
+left: 22px;
+height: 54px;
+line-height: 54px;
+float: left;
+}
+.btnfooter{
+width: 100px;
+margin-left: 20px;
+}

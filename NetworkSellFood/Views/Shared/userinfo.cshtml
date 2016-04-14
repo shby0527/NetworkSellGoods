@@ -1,0 +1,46 @@
+﻿@model NetworkSellFood.WebUser
+@{
+    ViewBag.Footer = false;
+    Layout = "~/Views/Shared/master.cshtml";
+    var session =(NetworkSellFood.WebSessionUser)Session["user"];
+    ViewData ["UserManager"] = NetworkSellFood.AdminOption.PermissionCheck (session, NetworkSellFood.WebUserGroup.UserManage);
+	ViewData ["GoodsManager"] = 
+				NetworkSellFood.AdminOption.PermissionCheck (session, NetworkSellFood.WebUserGroup.AddMenu) || 
+				NetworkSellFood.AdminOption.PermissionCheck (session, NetworkSellFood.WebUserGroup.DeleteMenu) ||
+			NetworkSellFood.AdminOption.PermissionCheck (session, NetworkSellFood.WebUserGroup.AddType) || 
+			NetworkSellFood.AdminOption.PermissionCheck (session, NetworkSellFood.WebUserGroup.DeleteType);
+}
+@section head{
+<link href="/Content/css/userinfo.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
+@RenderSection("headuser",true)
+}
+<div id="UserLeft">
+<ul>
+<li><img alt="用户头像" src="/ava/@(Model.UID)" width="100" height="100" class="img-circle" /></li>
+<li><label data-toggle="tooltip" data-placement="bottom" title="注册时间:@(Model.RegisterTime.ToString("yyyy年MM月dd日 HH:mm:ss")) &#10; 最后登录时间:@(Model.LastLogin.ToString("yyyy年MM月dd日 HH:mm:ss"))">@(Model.NickName)</label></li>
+<li><a href="/UserOpt/AvatorUp">修改头像</a></li>
+<li><a href="/UserOpt/PasswdChange">修改密码</a></li>
+<li><a href="/UserOpt/UserInfo">用户信息</a></li>
+<li><a href="/UserOpt/SafetyEmail">设置安全邮箱</a></li>
+<li><a href="/UserOpt/RealInfo">用户密保信息</a></li>
+<li><hr /></li>
+<li><a href="/ShopOpt/AddressInfo">用户通信地址</a></li>
+<li><a href="/ShopOpt/MyCart">我的购物车</a></li>
+<li><a href="/ShopOpt/MyIndent">我的订单</a></li>
+
+<li><hr /></li>
+@if(ViewData["UserManager"].Equals(true)){
+<li><a href="/UserManage/UserManageMain">用户管理</a></li>
+}
+@if(ViewData["GoodsManager"].Equals(true)){
+<li><a href="/ShopManage/ShopManageMain">商品管理</a></li>
+}
+<li><a href="/UserOpt/LogOut">退出登录</a></li>
+</ul>
+</div>
+<div id="UserRight">
+@RenderBody()
+</div>

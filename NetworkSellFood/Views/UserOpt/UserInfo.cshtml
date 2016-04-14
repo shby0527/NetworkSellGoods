@@ -1,0 +1,33 @@
+﻿@model NetworkSellFood.WebUser
+@{
+    ViewBag.Title = Model.NickName +  "的主页";
+    Layout = "~/Views/Shared/userinfo.cshtml";
+    var imgUp = Request.QueryString["avaImage"];
+}
+@section headuser{
+	@if(imgUp != null){
+	    if(imgUp == "big"){
+	   <script type="text/javascript">
+	   alert('头像文件太大');
+	   </script>
+	   }else{
+	   <script type="text/javascript">
+	   alert('头像上传失败');
+	   </script>
+	   }
+	}
+}
+<div class="panlarea">
+<form role="form" class="form-group" action="/UserOpt/UserInfo" method="post">
+<ul>
+<li><img alt="用户头像" src="/ava/@(Model.UID)" class="img-circle" width="100" height="100" /></li>
+<li><label class="labels">用户ID:</label><label class="label labelextra">@(Model.UID)</label></li>
+<li><label class="labels">用户名:</label><label class="label labelextra">@(Model.UserName)</label></li>
+<li><label class="labels">用户昵称:</label><input type="text" id="txtnick" value="@(Model.NickName)" name="nickname" class="form-control" /></li>
+<li><label class="labels">注册时间:</label><label class="label labelextra">@(Model.RegisterTime.ToString("yyyy年MM月dd日 HH:mm:ss"))</label></li>
+<li><label class="labels">最后登录:</label><label class="label labelextra">@(Model.LastLogin.ToString("yyyy年MM月dd日 HH:mm:ss"))</label></li>
+<li><label class="labels">等级:</label><label class="label labelextra">@(Model.Level)级</label></li>
+<li><button type="submit" class="btn btn-primary">确认修改</button></li>
+</ul>
+</form>
+</div>

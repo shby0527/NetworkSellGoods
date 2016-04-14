@@ -1,0 +1,6 @@
+/home/umi/monopro/NetworkSellFood/AbTextProcess/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/umi/monopro/NetworkSellFood/AbTextProcess/bin/Debug/AbTextProcess.dll.mdb
+/home/umi/monopro/NetworkSellFood/AbTextProcess/bin/Debug/AbTextProcess.dll
+/home/umi/monopro/NetworkSellFood/AbTextProcess/obj/Debug/AbTextProcess.dll
+/home/umi/monopro/NetworkSellFood/AbTextProcess/obj/Debug/AbTextProcess.dll.mdb
+/home/umi/monopro/NetworkSellFood/AbTextProcess/bin/Debug/PluginInterface.dll

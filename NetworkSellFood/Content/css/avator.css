@@ -1,0 +1,8 @@
+input[type="file"]{
+display: inline-block;
+width: 200px;
+margin: 0 auto;
+}
+button{
+width: 200px;
+}

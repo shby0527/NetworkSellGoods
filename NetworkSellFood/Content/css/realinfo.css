@@ -1,0 +1,12 @@
+input[type="text"],.select{
+display: inline-block;
+width: 300px;
+}
+#btnSubmit{
+width: 280px;
+margin-left: 24px;
+}
+.panlarea ul li a{
+display: inline-block;
+margin-left: 60px;
+}

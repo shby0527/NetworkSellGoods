@@ -1,0 +1,19 @@
+﻿@model NetworkSellFood.WebUser
+
+@{
+    ViewBag.Title = "头像上传";
+    Layout = "~/Views/Shared/userinfo.cshtml";
+}
+@section headuser{
+<link href="/Content/css/avator.css" type="text/css" rel="stylesheet" />
+}
+<div class="panlarea">
+<form role="form" class="form-group" action="/UserOpt/AvatorUpload" enctype="multipart/form-data" method="post">
+<ul>
+<li><img alt="用户头像" src="/ava/@(Model.UID)" width="100" height="100" class="img-circle" /></li>
+<li><input type="file" name="AvaUp" /></li>
+<li><label>支持格式:jpg,bmp,png,请不要上传大于200KB的图片</label></li>
+<li><button type="submit" class="btn btn-primary">提交</button></li>
+</ul>
+</form>
+</div>
