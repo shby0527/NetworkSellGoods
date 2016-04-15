@@ -1,12 +1,17 @@
 ﻿<Properties StartupItem="NetworkSellFood/NetworkSellFood.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-stable" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/DatabaseOption/UserOption.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/Views/Shared/shopmanagelayout.cshtml">
     <Files>
       <File FileName="NetworkSellFood/DatabaseOption/UserOption.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/DatabaseOption/ShopOption.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/DatabaseOption/AdminOption.cs" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Views/UserManage/UserManageMain.cshtml" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Views/UserManage/UserManageMain.cshtml" Line="9" Column="1" />
+      <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="12" Column="42" />
+      <File FileName="NetworkSellFood/Web.config" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/css/manager.css" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Views/UserOpt/RealInfo.cshtml" Line="8" Column="1" />
+      <File FileName="NetworkSellFood/Views/ShopManage/ShopManageMain.cshtml" Line="10" Column="1" />
+      <File FileName="NetworkSellFood/Views/Shared/shopmanagelayout.cshtml" Line="15" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

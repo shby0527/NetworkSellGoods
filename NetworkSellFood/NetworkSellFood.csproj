@@ -458,6 +458,7 @@
     <Content Include="Views\ShopManage\ShopManageMain.cshtml" />
     <Content Include="Views\ShopOpt\MyCart.cshtml" />
     <Content Include="Views\ShopOpt\MyIndent.cshtml" />
+    <Content Include="Content\css\manager.css" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

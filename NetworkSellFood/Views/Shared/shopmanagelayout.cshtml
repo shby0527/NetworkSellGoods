@@ -4,7 +4,35 @@
     Layout = "~/Views/Shared/userinfo.cshtml";
 }
 @section headuser{
+<link href="/Content/css/manager.css" type="text/css" rel="stylesheet" />
 @RenderSection("smhead",true)
 }
-
+<!--上层菜单 -->
+<nav class="navbar navbar-default menuarea" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">商品管理</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">分类信息管理<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+         <li><a href="#">添加删除分类信息</a></li>
+         <li><a href="#">修改分类信息</a></li>
+         </ul>
+         </li>
+         <li>
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">菜单管理<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+         <li><a href="#">添加删除菜单</a></li>
+         <li><a href="#">修改菜单</a></li>
+         </ul>
+         </li>
+         <li class="activite"><a href="#">订单管理</a></li>
+      </ul>
+   </div>
+</nav>
+<div class="managermain">
 @RenderBody()
+<div style="clear:both"></div>
+</div>

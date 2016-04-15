@@ -3,8 +3,36 @@
     Layout = "~/Views/Shared/userinfo.cshtml";
 }
 @section headuser{
+<link href="/Content/css/manager.css" type="text/css" rel="stylesheet" />
 @RenderSection("umhead",true)
 }
-
-
+<!--上层菜单 -->
+<nav class="navbar navbar-default menuarea" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">用户管理</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户信息管理<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+         <li><a href="#">修改用户基本信息</a></li>
+         <li><a href="#">修改用户安全信息</a></li>
+         </ul>
+         </li>
+         <li>
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户组管理<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+         <li><a href="#">添加删除用户组</a></li>
+         <li><a href="#">更改用户组</a></li>
+         <li><a href="#">用户组用户管理</a></li>
+         </ul>
+         </li>
+         <li class="activite"><a href="#">用户状态管理</a></li>
+      </ul>
+   </div>
+</nav>
+<div class="managermain">
 @RenderBody()
+<div style="clear:both"></div>
+</div>
