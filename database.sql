@@ -131,8 +131,8 @@ create table `info_type`(
      `commit`  varchar(255) not null,
      -- 父分类id
      `ptid`    int unsigned null default null,
-	 -- 状态 0 正常 1 删除
-	 `status`  tinyint unsigned not null default 0,
+     -- 状态 0 正常 1 删除
+     `status`  tinyint unsigned not null default 0,
      -- ------------------------------------
      primary key (`tid`),
      foreign key(`ptid`) references `info_type`(`tid`)
@@ -147,10 +147,10 @@ create table `info_foods`(
     `gpic`     varchar(2048) not null,
     -- 商品说明
     `gcommit`  varchar(255) not null,
-	-- 单价
-	`gprice`   int unsigned not null,
-	-- 状态 0 正常 1 下架/删除
-	`status`   tinyint unsigned not null default 0,
+    -- 单价
+    `gprice`   int unsigned not null,
+    -- 状态 0 正常 1 下架/删除
+    `status`   tinyint unsigned not null default 0,
     -- -------------------------------
     primary key(`gid`),
     index (`gname`)
