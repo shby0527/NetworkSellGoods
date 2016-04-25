@@ -1,8 +1,22 @@
 ﻿@model NetworkSellFood.WebUser
 
 @{
-    ViewBag.Title = "用户管理主页";
+    ViewBag.Title = "修改用户基本信息";
     Layout = "~/Views/Shared/usermanagelayout.cshtml";
 }
 @section umhead{
+<link href="/Content/css/chgbaseuser.css" type="text/css" rel="stylesheet" />
 }
+<div class="panlarea">
+<form method="get">
+<div class="input-group">
+<input class="form-control searcharea" name="search" placeholder="请输入要更改的用户名" />
+<span class="input-group-btn">
+<button type="submit" class="btn btn-default">搜索</button>
+</span>
+</div>
+</form>
+</div>
+<div>
+test
+</div>
