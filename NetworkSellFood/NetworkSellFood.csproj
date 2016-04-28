@@ -460,6 +460,7 @@
     <Content Include="Views\ShopOpt\MyIndent.cshtml" />
     <Content Include="Content\css\manager.css" />
     <Content Include="Content\css\chgbaseuser.css" />
+    <Content Include="Content\scripts\chgbaseuser.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

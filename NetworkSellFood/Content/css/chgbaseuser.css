@@ -1,3 +1,22 @@
-.searcharea{
-	
-}﻿
+.ullist{
+	list-style: none;
+	width: 280px;
+	text-align: left;
+	margin: 0 auto;
+}
+
+.imgli{
+	text-align: center;
+}
+
+.ullist li{
+	padding-bottom: 6px;
+
+}
+.ullist li span{
+	font-weight: 500;
+	font-size: medium;
+	text-align: center;
+	display: inline-block;
+	width: 150px;
+}

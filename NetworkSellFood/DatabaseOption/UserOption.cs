@@ -165,6 +165,30 @@ namespace NetworkSellFood
 		}
 
 		/// <summary>
+		/// Determines if is baned the specified user.
+		/// </summary>
+		/// <returns><c>true</c> if is baned the specified user; otherwise, <c>false</c>.</returns>
+		/// <param name="user">User.</param>
+		public static bool IsBaned (WebSessionUser user)
+		{
+			if (user == null)
+				return false;
+			else if (!user.LoginSign)
+				return false;
+			MysqlHelper database = new MysqlHelper (DatabaseUser.DataServer, DatabaseUser.DataPort,
+				                       DatabaseUser.DataUser, DatabaseUser.DataPasswd, DatabaseUser.Database);
+			string SQL = string.Format (
+				             "select `status` from info_user where `uid` = {0}",
+				             user.UID);
+			int count = 0;
+			DataSet ds = database.EexcuteSQLWithResult (SQL, out count);
+			if (count == 0)
+				return false;
+			byte status = (byte)ds.Tables [0].Rows [0] ["status"];
+			return (status == 1);
+		}
+
+		/// <summary>
 		/// Changes the name of the nick.
 		/// </summary>
 		/// <returns><c>true</c>, if nick name was changed, <c>false</c> otherwise.</returns>
@@ -252,12 +276,19 @@ namespace NetworkSellFood
 				return false;
 			else if (!user.LoginSign)
 				return false;
-			string SQL = string.Format ("update info_user set `avator`=?avator where `uid`={0}", user.UID);
-			MySqlParameter paramAva = new MySqlParameter ("?avator", MySqlDbType.VarChar);
-			paramAva.Value = avatorPath;
+			string SQL = null;
+			int count = 0;
 			MysqlHelper database = new MysqlHelper (DatabaseUser.DataServer, DatabaseUser.DataPort,
 				                       DatabaseUser.DataUser, DatabaseUser.DataPasswd, DatabaseUser.Database);
-			int count = database.ExecuteSQLWithoutResult (SQL, CommandType.Text, paramAva);
+			if (avatorPath == null) {
+				SQL = string.Format ("update info_user set `avator`=null where `uid`={0}", user.UID);
+				count = database.ExecuteSQLWithoutResult (SQL, CommandType.Text);
+			} else {
+				SQL = string.Format ("update info_user set `avator`=?avator where `uid`={0}", user.UID);
+				MySqlParameter paramAva = new MySqlParameter ("?avator", MySqlDbType.VarChar);
+				paramAva.Value = avatorPath;
+				count = database.ExecuteSQLWithoutResult (SQL, CommandType.Text, paramAva);
+			}
 			if (count != 0)
 				return true;
 			else

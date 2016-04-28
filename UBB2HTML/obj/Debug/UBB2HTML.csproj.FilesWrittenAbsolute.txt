@@ -1,8 +1,0 @@
-/home/umi/monopro/NetworkSellFood/UBB2HTML/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/umi/monopro/NetworkSellFood/UBB2HTML/bin/Debug/UBB2HTML.dll.mdb
-/home/umi/monopro/NetworkSellFood/UBB2HTML/bin/Debug/UBB2HTML.dll
-/home/umi/monopro/NetworkSellFood/UBB2HTML/obj/Debug/UBB2HTML.dll
-/home/umi/monopro/NetworkSellFood/UBB2HTML/obj/Debug/UBB2HTML.dll.mdb
-/home/umi/monopro/NetworkSellFood/UBB2HTML/bin/Debug/PluginInterface.dll
-/home/umi/monopro/NetworkSellFood/UBB2HTML/bin/Debug/AbTextProcess.dll
-/home/umi/monopro/NetworkSellFood/UBB2HTML/bin/Debug/AbTextProcess.dll.mdb

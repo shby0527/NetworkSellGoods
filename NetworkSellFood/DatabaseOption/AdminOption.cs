@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using AbPasswdPlugin;
+using PluginLoader.Loader;
 using DatabaseVisited.MySqlHelper;
 
 namespace NetworkSellFood
@@ -44,6 +46,35 @@ namespace NetworkSellFood
 					return true;
 			}
 			return false;
+		}
+
+		/// <summary>
+		/// Resets the password.
+		/// </summary>
+		/// <returns><c>true</c>, if password was reset, <c>false</c> otherwise.</returns>
+		/// <param name="user">User.</param>
+		/// <param name="uid">Uid.</param>
+		public static bool ResetPassword (WebSessionUser user, uint uid)
+		{
+			if (user == null)
+				return false;
+			if (!user.LoginSign)
+				return false;
+			if (!PermissionCheck (user, WebUserGroup.UserManage))
+				return false;
+			MysqlHelper database = new MysqlHelper (DatabaseUser.DataServer, DatabaseUser.DataPort,
+				                       DatabaseUser.DataUser, DatabaseUser.DataPasswd, DatabaseUser.Database);
+			IPluginArray<AbsPassword> plgPwdArr = PluginLoader<AbsPassword>.Load ();
+			AbsPassword passwd = plgPwdArr [0];
+			passwd.Password = "a123456";
+			byte[] cryptoedPwd = passwd.GetBinary;
+			string SQL = string.Format ("update info_user set `password`=?password where `uid`={0}", uid);
+			MySqlParameter paramPwd = new MySqlParameter ("?password", MySqlDbType.VarBinary);
+			paramPwd.Value = cryptoedPwd;
+			int count = database.ExecuteSQLWithoutResult (SQL, CommandType.Text, paramPwd);
+			if (count == 0)
+				return false;
+			return true;
 		}
 
 		/// <summary>
