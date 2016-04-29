@@ -68,12 +68,13 @@ namespace NetworkSellFood
 				try {
 					smtp.Credentials = new NetworkCredential (SmtpUser, SmtpPassword);
 					MailAddress addr = new MailAddress (To);
-					using (MailMessage msg = new MailMessage ()) {
+					MailAddress addrfrom = new MailAddress (EmailAddress,"网站用户服务中心",Encoding.UTF8);
+					using (MailMessage msg = new MailMessage ()) {						
 						msg.Subject = Subject;
 						msg.SubjectEncoding = Encoding.UTF8;
-						msg.From = new MailAddress (EmailAddress);
+						msg.From = addrfrom;
 						msg.To.Add (addr);
-						msg.Sender = new MailAddress (EmailAddress);
+						msg.Sender = addrfrom;
 						msg.Body = Context;
 						msg.BodyEncoding = Encoding.UTF8;
 						msg.IsBodyHtml = IsHtml;

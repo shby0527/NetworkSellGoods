@@ -2,7 +2,7 @@
 <rules>
 	<version ver="1.0" />
 	<rule>
-		<regex>\[img\]*{1,}\.jpg\[/img\]</regex>
-		<replace>AAA</replace>
+		<regex>\[img\](https?://[0-9a-zA-Z.])\[/img\]</regex>
+		<replace>&le;</replace>
 	</rule>
 </rules>

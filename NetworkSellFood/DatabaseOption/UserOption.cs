@@ -257,8 +257,8 @@ namespace NetworkSellFood
 				string EMail = (string)ds.Tables [0].Rows [0] ["address"];
 				AutoSendEmail.SendEmail ("账户信息变更通知",
 					string.Format (
-						"尊敬的{0}:\n您已经与{1}更改了您的密码，请确认为您本人操作.\n\t\t\t网上订餐系统",
-						user.NickName, DateTime.Now.ToString ()), EMail);
+						"<p>尊敬的<a style=\"color:#6cf;\">{0}</a>:</p><p>您已经与<a style=\"color:#f00;\">{1}</a>更改了您的密码，请确认为您本人操作.<p><p style=\"margin-left:200px;\">网上订餐系统</p>",
+						user.NickName, DateTime.Now.ToString ()), EMail, true);
 			}
 			ds.Dispose ();
 			return true;
@@ -421,8 +421,8 @@ namespace NetworkSellFood
 				return false;
 			}
 			AutoSendEmail.SendEmail (string.Format ("{0}的邮箱验证码", user.NickName),
-				string.Format ("您的邮箱验证码为{0}。\n请点击 http://{1}/UserOpt/VailEmail/{0}\n进行验证。", ue.EmailVailCode,
-					WebDomain), ue.EmailAddress);
+				string.Format ("<p>您的邮箱验证码为<a style=\"color:#f00;\">{0}</a>。<p><p>请点击 <a href=\"http://{1}/UserOpt/VailEmail/{0}\">这里</a>进行验证。</p><p>如果无法点击，请复制这个到浏览器地址栏 <a style=\"color:#f00;\">http://{1}/UserOpt/VailEmail/{0}</a></p>", 
+					ue.EmailVailCode, WebDomain), ue.EmailAddress, true);
 			return true;
 		}
 
@@ -456,8 +456,8 @@ namespace NetworkSellFood
 			int count = database.ExecuteSQLWithoutResult (SQL, CommandType.Text, parAddr, parCode);
 			if (count != 0) {
 				AutoSendEmail.SendEmail (string.Format ("{0}的邮箱验证码", user.NickName),
-					string.Format ("您的邮箱验证码为{0}。\n请点击 http://{1}/UserOpt/VailEmail/{0}\n进行验证。", code,
-						WebDomain), EmailAddress);
+					string.Format ("<p>您的邮箱验证码为<a style=\"color:#f00;\">{0}</a>。<p><p>请点击 <a href=\"http://{1}/UserOpt/VailEmail/{0}\">这里</a>进行验证。</p><p>如果无法点击，请复制这个到浏览器地址栏 <a style=\"color:#f00;\">http://{1}/UserOpt/VailEmail/{0}</a></p>", 
+						code, WebDomain), EmailAddress,true);
 				return true;
 			}
 			return false;
