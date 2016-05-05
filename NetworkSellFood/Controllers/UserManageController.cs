@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace NetworkSellFood.Controllers
 {
@@ -26,31 +25,31 @@ namespace NetworkSellFood.Controllers
 		}
 
 		[HttpPost]
-		public string ResetPasswd(uint id)
+		public ActionResult ResetPasswd(uint id)
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false,
 					Reason = "没有登录",
 					Redict = "/"
 				});
 			}
 			if (!AdminOption.PermissionCheck (session, WebUserGroup.UserManage)) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false,
 					Reason = "没有权限",
 					Redict = "/UserOpt/UserInfo"
 				});
 			}
 			if (!AdminOption.ResetPassword (session, id)) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false,
 					Reason = "初始化失败",
 					Redict = "/UserOpt/UserInfo"
 				});
 			}
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsSuccess = true,
 				Reason = "初始化成功",
 				Redict = this.Request.UrlReferrer.AbsoluteUri

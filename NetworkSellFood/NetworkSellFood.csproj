@@ -64,9 +64,6 @@
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b9a188c8922137c6">
-      <Package>newtonsoft-json</Package>
-    </Reference>
     <Reference Include="PluginLoader">
       <HintPath>..\..\lib\PluginLoader\PluginLoader.dll</HintPath>
     </Reference>

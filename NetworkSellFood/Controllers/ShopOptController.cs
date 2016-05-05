@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace NetworkSellFood.Controllers
 {
@@ -56,11 +55,11 @@ namespace NetworkSellFood.Controllers
 		}
 
 		[HttpPost]
-		public string ChangeAddress()
+		public ActionResult ChangeAddress()
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
 				});
 			string aid = this.Request.Form ["aid"];
@@ -69,30 +68,30 @@ namespace NetworkSellFood.Controllers
 			string person = this.Request.Form ["callperson"];
 			string phone = this.Request.Form ["callphone"];
 			if (!UserOption.ModifyAddressInfo (session, Convert.ToUInt32 (aid), commit, info, person, phone)) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
 				});
 			}
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsSuccess = true
 			});
 		}
 
 		[HttpPost]
-		public string DeleteAddress()
+		public ActionResult DeleteAddress()
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
 				});
 			string aid = this.Request.Form ["aid"];
 			if (!UserOption.RemoveAddressInfo (session, Convert.ToUInt32 (aid))) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
 				});
 			}
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsSuccess = true
 			});
 		}

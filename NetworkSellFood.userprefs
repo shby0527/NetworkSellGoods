@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="NetworkSellFood/NetworkSellFood.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-stable" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/DatabaseOption/AdminOption.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/Controllers/UserManageController.cs">
     <Files>
       <File FileName="NetworkSellFood/DatabaseOption/UserOption.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/DatabaseOption/ShopOption.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/UserManage/UserManageMain.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Web.config" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Web.config" Line="125" Column="17" />
       <File FileName="NetworkSellFood/Content/css/manager.css" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/UserOpt/RealInfo.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/ShopManage/ShopManageMain.cshtml" Line="1" Column="1" />
@@ -16,18 +16,24 @@
       <File FileName="NetworkSellFood/Models/WebForGoodsReplayCollection.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Content/css/main.css" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Content/css/chgbaseuser.css" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Controllers/UserManageController.cs" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/DatabaseOption/AdminOption.cs" Line="77" Column="16" />
+      <File FileName="NetworkSellFood/Controllers/UserManageController.cs" Line="38" Column="24" />
+      <File FileName="NetworkSellFood/DatabaseOption/AdminOption.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Content/scripts/chgbaseuser.js" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Controllers/UserOptController.cs" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Controllers/UserOptController.cs" Line="345" Column="20" />
       <File FileName="NetworkSellFood/Global.asax.cs" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/scripts/addressinfo.js" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/scripts/realinfo.js" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/scripts/se.js" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/scripts/register.js" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Content/scripts/login.js" Line="14" Column="13" />
+      <File FileName="NetworkSellFood/Content/scripts/chgpwd.js" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Controllers/HomeController.cs" Line="11" Column="19" />
+      <File FileName="NetworkSellFood/Controllers/ShopOptController.cs" Line="58" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/umi/monopro/NetworkSellFood/NetworkSellFood/DatabaseOption/AdminOption.cs" line="59" column="4" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
