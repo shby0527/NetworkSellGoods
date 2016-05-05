@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -158,26 +157,26 @@ namespace NetworkSellFood.Controllers
 			return this.Redirect ("/UserOpt/SafetyEmail?status=success");
 		}
 
-		public string ResendEmail ()
+		public ActionResult ResendEmail ()
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
-				});
+				},JsonRequestBehavior.AllowGet);
 
 			if (!UserOption.ResendEmail (session)) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsSuccess = false
-				});
+				},JsonRequestBehavior.AllowGet);
 			}
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsSuccess = true
-			});
+			},JsonRequestBehavior.AllowGet);
 		}
 
 		[HttpPost]
-		public string UserLogin ()
+		public ActionResult UserLogin ()
 		{
 			string username = this.Request.Form ["username"];
 			string passwd = this.Request.Form ["passwd"];
@@ -205,19 +204,19 @@ namespace NetworkSellFood.Controllers
 			}
 			RTLN:
 			if (isPassed) {
-				return JsonConvert.SerializeObject (new {IsPassed = true,Href = "/"});
+				return this.Json (new {IsPassed = true,Href = "/"});
 			} else {
-				return JsonConvert.SerializeObject (new {IsPassed = false});
+				return this.Json (new {IsPassed = false});
 			}
 		}
 
 		[HttpPost]
-		public string AppLogin ()
+		public ActionResult AppLogin ()
 		{
 			string username = this.Request.Form ["username"];
 			string password = this.Request.Form ["password"];
 			if (username == null || password == null) {
-				return JsonConvert.SerializeObject (
+				return this.Json (
 					new {
 						LoginStatus = false
 					});
@@ -226,11 +225,11 @@ namespace NetworkSellFood.Controllers
 			uo.UserName = username;
 			uo.Password = password;
 			if (!uo.UserLogin ())
-				return JsonConvert.SerializeObject (
+				return this.Json (
 					new {
 						LoginStatus = false
 					});
-			return JsonConvert.SerializeObject (
+			return this.Json (
 				new {LoginStatus = true,
 					UserInfo = new {
 						UserName = uo.SessionStatus.UserName,
@@ -241,43 +240,43 @@ namespace NetworkSellFood.Controllers
 		}
 
 		[HttpPost]
-		public string AppRegister ()
+		public ActionResult AppRegister ()
 		{
 			string username = this.Request ["username"];
 			string password = this.Request ["password"];
 			if (username == null || password == null)
-				return JsonConvert.SerializeObject (new  {
+				return this.Json (new  {
 					RegisterStatus = false
 				});
 			if (username.Length < 6 || password.Length < 6)
-				return JsonConvert.SerializeObject (new  {
+				return this.Json (new  {
 					RegisterStatus = false
 				});
 			if (UserOption.CheckUser (username))
-				return JsonConvert.SerializeObject (new  {
+				return this.Json (new  {
 					RegisterStatus = false
 				});
 			if (!UserOption.RegisterUser (username, password))
-				return JsonConvert.SerializeObject (new  {
+				return this.Json (new  {
 					RegisterStatus = false
 				});
-			return JsonConvert.SerializeObject (new  {
+			return this.Json (new  {
 				RegisterStatus = true
 			});
 		}
 
 		[HttpPost]
-		public string CheckUser ()
+		public ActionResult CheckUser ()
 		{
 			string username = this.Request.Form ["user"];
 			if (username == null)
 				username = "";
 			bool isExists = UserOption.CheckUser (username);
-			return JsonConvert.SerializeObject (new {IsExists = isExists});
+			return this.Json (new {IsExists = isExists});
 		}
 
 		[HttpPost]
-		public string CheckVCode ()
+		public ActionResult CheckVCode ()
 		{
 			string vcode = this.Request.Form ["vcode"];
 			if (vcode == null)
@@ -285,11 +284,11 @@ namespace NetworkSellFood.Controllers
 			bool passed = false;//不通过
 			if (vcode.ToUpper () == this.Session ["VCode"].ToString ().ToUpper ())
 				passed = true;
-			return JsonConvert.SerializeObject (new {IsPassed = passed});
+			return this.Json (new {IsPassed = passed});
 		}
 
 		[HttpPost]
-		public string PostRegister ()
+		public ActionResult PostRegister ()
 		{
 			string Username = this.Request.Form ["username"];
 			string Passwd = this.Request.Form ["passwd"];
@@ -305,45 +304,45 @@ namespace NetworkSellFood.Controllers
 				goto RTL;
 			}
 			if (UserOption.RegisterUser (Username, Passwd)) {
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsRegister = true,
 					Href = "/UserOpt/LoginPage"
 				});
 			}
 			RTL:
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsRegister = false
 			});
 		}
 
 		[HttpPost]
-		public string PasswdChg ()
+		public ActionResult PasswdChg ()
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsPassed = false
 				});
 			if (!session.LoginSign)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsPassed = false
 				});
 			string oldpwd = this.Request.Form ["oldpasswd"];
 			string pwd = this.Request.Form ["passwd"];
 			string pwda = this.Request.Form ["passwda"];
 			if (pwd.Length < 6)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsPassed = false
 				});
 			if (pwd != pwda)
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsPassed = false
 				});
 			if (!UserOption.ChangePassword (session, oldpwd, pwd))
-				return JsonConvert.SerializeObject (new {
+				return this.Json (new {
 					IsPassed = false
 				});
-			return JsonConvert.SerializeObject (new {
+			return this.Json (new {
 				IsPassed = true
 			});
 		}
