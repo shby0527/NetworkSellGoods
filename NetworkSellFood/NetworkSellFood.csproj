@@ -458,6 +458,10 @@
     <Content Include="Content\css\manager.css" />
     <Content Include="Content\css\chgbaseuser.css" />
     <Content Include="Content\scripts\chgbaseuser.js" />
+    <Content Include="Views\UserManage\ChangeSaftyInfo.cshtml" />
+    <Content Include="Views\UserManage\GroupOption.cshtml" />
+    <Content Include="Views\UserManage\UserGroup.cshtml" />
+    <Content Include="Views\UserManage\ChangeGroup.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
