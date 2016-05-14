@@ -4,8 +4,33 @@
     ViewBag.Title = "我的订单";
     Layout = "~/Views/Shared/userinfo.cshtml";
 }
+
 @section headuser{
+<link href="/Content/css/MyIndent.css" type="text/css" rel="stylesheet" />
 }
 <div class="panlarea">
-订单
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#collapseID">
+                    <label class="labels indentMyIndent ">订单号：</label>
+                    <label class="labels sizeMyIndent ">99999999999999999999</label>
+                    <label class="labels timeMyIndent ">2016年05月14日 12:45</label>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseID" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <img class="imageCart" width="85" height="85" alt="这是一张图" />
+                    <label class="labels nameCart">商品名字</label>
+                    <label class="priceCart divCart">价格</label>
+                    <label class="countCart">数量</label>
+                    <hr class="hr" />
+                </div>
+                <button type="button" class="btn btn-primary btnMyIndent">结算：250 元</button>
+            </div>
+        </div>
+    </div>
 </div>

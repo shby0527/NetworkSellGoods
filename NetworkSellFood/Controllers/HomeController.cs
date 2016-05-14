@@ -14,7 +14,7 @@ using AbPasswdPlugin;
 
 namespace NetworkSellFood.Controllers
 {
-	[ValidateInput(false)]
+	[ValidateInput (false)]
 	public class HomeController : Controller
 	{
 		public ActionResult Index ()
@@ -36,10 +36,18 @@ namespace NetworkSellFood.Controllers
 					return View (UserOption.GetUserBase (uo.SessionStatus));
 				}
 				return View ();
-			}
-			else
+			} else
 				return View (UserOption.GetUserBase (session));
 		}
+
+		public ActionResult GoodsInfo ()
+		{
+			WebSessionUser session = this.Session ["user"] as WebSessionUser;
+			if (session != null)
+				return View (UserOption.GetUserBase (session));
+			return View ();
+		}
+
 
 		/// <summary>
 		/// 产生验证码
@@ -63,12 +71,12 @@ namespace NetworkSellFood.Controllers
 				using (Bitmap bmp = new Bitmap (80, 26)) {
 					using (Graphics gp = Graphics.FromImage (bmp)) {
 						Color color = Color.FromArgb (rmd.Next (100, 255),
-							rmd.Next (100, 255),
-							rmd.Next (100, 255));
+							              rmd.Next (100, 255),
+							              rmd.Next (100, 255));
 						gp.Clear (color);
 						using (Brush brush = new SolidBrush (Color.FromArgb (rmd.Next (0, 100),
-							rmd.Next (0, 100),
-							rmd.Next (0, 100)))) {
+							                     rmd.Next (0, 100),
+							                     rmd.Next (0, 100)))) {
 							using (Font font = new Font ("Times New Roman", 16f)) {
 								gp.DrawString (vcode, font, brush, 8, 2);
 
@@ -87,7 +95,7 @@ namespace NetworkSellFood.Controllers
 										pen.Color = Color.FromArgb (rmd.Next (0, 150), rmd.Next (0, 150), rmd.Next (0, 150));
 									}
 								}
-								gp.Flush();
+								gp.Flush ();
 								#endregion
 								bmp.Save (ms, ImageFormat.Jpeg);
 								data = ms.GetBuffer ();

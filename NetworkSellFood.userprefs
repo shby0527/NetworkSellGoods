@@ -1,15 +1,14 @@
 ﻿<Properties StartupItem="NetworkSellFood/NetworkSellFood.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="/usr/bin/google-chrome-stable" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/Views/ShopManage/ShopManageMain.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NetworkSellFood/Views/ShopOpt/MyCart.cshtml">
     <Files>
-      <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="1" Column="1" />
+      <File FileName="NetworkSellFood/Views/Shared/usermanagelayout.cshtml" Line="28" Column="15" />
       <File FileName="NetworkSellFood/Views/UserManage/ChangeSaftyInfo.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/UserManage/UserManageMain.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/UserManage/GroupOption.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/UserManage/UserGroup.cshtml" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Views/UserManage/ChangeGroup.cshtml" Line="1" Column="1" />
       <File FileName="NetworkSellFood/Views/Shared/shopmanagelayout.cshtml" Line="1" Column="1" />
-      <File FileName="NetworkSellFood/Views/ShopManage/ShopManageMain.cshtml" Line="10" Column="1" />
+      <File FileName="NetworkSellFood/Views/ShopOpt/MyCart.cshtml" Line="23" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

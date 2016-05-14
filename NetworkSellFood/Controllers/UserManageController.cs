@@ -25,7 +25,7 @@ namespace NetworkSellFood.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult ResetPasswd(uint id)
+		public ActionResult ResetPasswd (uint id)
 		{
 			WebSessionUser session = this.Session ["user"] as WebSessionUser;
 			if (session == null) {
@@ -54,6 +54,43 @@ namespace NetworkSellFood.Controllers
 				Reason = "初始化成功",
 				Redict = this.Request.UrlReferrer.AbsoluteUri
 			});
+		}
+
+		public ActionResult ChangeSaftyInfo ()
+		{
+			WebSessionUser session = this.Session ["user"] as WebSessionUser;
+			if (session == null)
+				return this.RedirectToAction ("Index", "Home");
+			if (!AdminOption.PermissionCheck (session, WebUserGroup.UserManage))
+				return this.RedirectToAction ("Index", "Home");
+			string search = this.Request.QueryString ["search"];
+			if (search != null) {
+				WebUser user = AdminOption.SearchUserByUserName (session, search);
+				this.ViewData ["SearchUser"] = user;
+			}
+			return View (UserOption.GetUserBase (session));
+		}
+
+		public ActionResult GroupOption ()
+		{
+			WebSessionUser session = this.Session ["user"] as WebSessionUser;
+			if (session == null)
+				return this.RedirectToAction ("Index", "Home");
+			if (!(AdminOption.PermissionCheck (session, WebUserGroup.PermissionInvoke)
+			    || AdminOption.PermissionCheck (session, WebUserGroup.PermissionDeny)))
+				return this.RedirectToAction ("Index", "Home");
+			return View (UserOption.GetUserBase (session));
+		}
+
+		public ActionResult UserGroup ()
+		{
+			WebSessionUser session = this.Session ["user"] as WebSessionUser;
+			if (session == null)
+				return this.RedirectToAction ("Index", "Home");
+			if (!(AdminOption.PermissionCheck (session, WebUserGroup.PermissionInvoke)
+			    || AdminOption.PermissionCheck (session, WebUserGroup.PermissionDeny)))
+				return this.RedirectToAction ("Index", "Home");
+			return View (UserOption.GetUserBase (session));
 		}
 	}
 }
