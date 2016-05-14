@@ -310,6 +310,51 @@ namespace NetworkSellFood
 				return true;
 			return false;
 		}
+
+		public static string GetGoodsImage (uint gid)
+		{
+			string SQL = string.Format ("select `gpic` from info_foods where gid={0}", gid);
+			MysqlHelper database = new MysqlHelper (DatabaseUser.DataServer, DatabaseUser.DataPort,
+				                       DatabaseUser.DataUser, DatabaseUser.DataPasswd, DatabaseUser.Database);
+			int count = 0;
+			DataSet ds = database.EexcuteSQLWithResult (SQL, out count);
+			if (count == 0)
+				return null;
+			return (string)ds.Tables [0].Rows [0] ["gpic"];
+		}
+
+		/// <summary>
+		/// Gets the cart goods.
+		/// </summary>
+		/// <returns>The cart goods.</returns>
+		public static WebUserCartGoodsCollection GetCartGoods (WebSessionUser user)
+		{
+			if (user == null)
+				return null;
+			if (!user.LoginSign)
+				return null;
+			string SQL = string.Format ("select info_cart.csign,info_cart.count,info_foods.* from info_cart,info_foods where info_cart.gid = info_foods.gid and info_cart.uid={0}", user.UID);
+			MysqlHelper database = new MysqlHelper (DatabaseUser.DataServer, DatabaseUser.DataPort,
+				                       DatabaseUser.DataUser, DatabaseUser.DataPasswd, DatabaseUser.Database);
+			int count = 0;
+			DataSet ds = database.EexcuteSQLWithResult (SQL, out count);
+			WebUserCartGoodsCollection cart = new WebUserCartGoodsCollection ();
+			foreach (DataRow i in ds.Tables[0].Rows) {
+				cart.Add (new WebUserCart () { 
+					CSIGN = (uint)i ["csign"],
+					Count = (uint)i ["count"],
+					Goods = new WebGoodsInfo () {
+						GID = (uint)i ["gid"],
+						GName = (string)i ["gname"],
+						GPicture = (string)i ["gpic"],
+						GCommit = (string)i ["gcommit"],
+						GPrice = (uint)i ["gprice"],
+						Status = (byte)i ["status"]
+					}
+				});
+			}
+			return cart;
+		}
 	}
 }
 

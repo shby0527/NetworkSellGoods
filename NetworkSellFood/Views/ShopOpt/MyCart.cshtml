@@ -3,18 +3,27 @@
 @{
     ViewBag.Title = "我的购物车";
     Layout = "~/Views/Shared/userinfo.cshtml";
+    NetworkSellFood.WebUserCartGoodsCollection cart = (NetworkSellFood.WebUserCartGoodsCollection)ViewData["cart"];
 }
 @section headuser{
     <link href="/Content/css/MyCart.css" type="text/css" rel="stylesheet" />
 }
 <div class="panlarea">
+@if(cart.Count != 0){
     <ul>
+    @foreach(NetworkSellFood.WebUserCart i in cart){
         <li>
-            <img class="imageCart" width="85" height="85" alt="这是一张图" />
-            <label class="labels nameCart">商品名字</label>
-            <label class="">价格</label>
-            <div class="divCart"><a>+</a><input class="form-control priceCart" type="text"/><a>-</a></div>
-            <a>删除</a>
+							 <input data-gid="@(i.Goods.GID)" type="checkbox" />
+            <img class="imageCart" width="85" height="85" alt="商品图片" src="/pic/@(i.Goods.GID)" />
+            <label class="labels nameCart">@(i.Goods.GName)</label>
+            <label class="priceCart divCart">@(i.Goods.GPrice)</label>
+            <div class="divCart"><a class="symbolCart">+</a><input data-gid="@(i.Goods.GID)" class="form-control countCart" type="text" value="@(i.Count)" /><a class="symbolCart">-</a></div>
+            <a data-gid="@(i.Goods.GID)" class="divCart">删除</a>
         </li>
+    }
     </ul>
+    <button type="button" class="btn btn-primary">提交订单</button>
+}else{
+<div class="alert alert-danger">购物车中还什么都没有哦～</div>
+}
 </div>

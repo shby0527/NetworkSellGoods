@@ -21,6 +21,12 @@ namespace NetworkSellFood
 				new {controller = "UserOpt",action = "Avator",uid = "0"}
 			);
 
+			routes.MapRoute (
+				"GoodsPic",
+				"pic/{pid}",
+				new {controller = "ShopOpt",action = "GoodsPic",pid = "0"}
+			);
+
 			routes.MapRoute ("AppLogin", 
 				"appinterface/login", 
 				new {controller = "UserOpt",action = "AppLogin"});
