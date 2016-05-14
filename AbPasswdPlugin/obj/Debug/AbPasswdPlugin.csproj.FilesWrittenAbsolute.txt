@@ -1,0 +1,6 @@
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/bin/Debug/AbPasswdPlugin.dll.mdb
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/bin/Debug/AbPasswdPlugin.dll
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/obj/Debug/AbPasswdPlugin.dll
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/obj/Debug/AbPasswdPlugin.dll.mdb
+/home/umi/monopro/NetworkSellFood/AbPasswdPlugin/bin/Debug/PluginInterface.dll

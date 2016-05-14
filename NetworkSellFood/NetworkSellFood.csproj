@@ -461,7 +461,9 @@
     <Content Include="Views\UserManage\ChangeSaftyInfo.cshtml" />
     <Content Include="Views\UserManage\GroupOption.cshtml" />
     <Content Include="Views\UserManage\UserGroup.cshtml" />
-    <Content Include="Views\UserManage\ChangeGroup.cshtml" />
+    <Content Include="Content\css\MyCart.css" />
+    <Content Include="Views\ShopManage\TypeManage.cshtml" />
+    <Content Include="Views\ShopManage\GoodsManage.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

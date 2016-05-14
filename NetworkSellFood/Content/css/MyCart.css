@@ -1,0 +1,15 @@
+﻿.imageCart{
+
+}
+.nameCart {
+    width:200px;
+    text-align:left;
+}
+.priceCart {
+    width:41px;
+    height:25px;
+    display:inline-block;
+}
+.divCart{
+		display:inline-block;
+}

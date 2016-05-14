@@ -1,0 +1,5 @@
+/home/umi/monopro/NetworkSellFood/DatabaseVisited/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/umi/monopro/NetworkSellFood/DatabaseVisited/bin/Debug/DatabaseVisited.dll.mdb
+/home/umi/monopro/NetworkSellFood/DatabaseVisited/bin/Debug/DatabaseVisited.dll
+/home/umi/monopro/NetworkSellFood/DatabaseVisited/obj/Debug/DatabaseVisited.dll
+/home/umi/monopro/NetworkSellFood/DatabaseVisited/obj/Debug/DatabaseVisited.dll.mdb

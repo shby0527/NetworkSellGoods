@@ -5,7 +5,16 @@
     Layout = "~/Views/Shared/userinfo.cshtml";
 }
 @section headuser{
+    <link href="/Content/css/MyCart.css" type="text/css" rel="stylesheet" />
 }
 <div class="panlarea">
-购物车
+    <ul>
+        <li>
+            <img class="imageCart" width="85" height="85" alt="这是一张图" />
+            <label class="labels nameCart">商品名字</label>
+            <label class="">价格</label>
+            <div class="divCart"><a>+</a><input class="form-control priceCart" type="text"/><a>-</a></div>
+            <a>删除</a>
+        </li>
+    </ul>
 </div>

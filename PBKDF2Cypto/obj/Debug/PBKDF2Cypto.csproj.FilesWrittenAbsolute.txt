@@ -1,0 +1,8 @@
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/bin/Debug/PBKDF2Cypto.dll.mdb
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/bin/Debug/PBKDF2Cypto.dll
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/obj/Debug/PBKDF2Cypto.dll
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/obj/Debug/PBKDF2Cypto.dll.mdb
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/bin/Debug/PluginInterface.dll
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/bin/Debug/AbPasswdPlugin.dll
+/home/umi/monopro/NetworkSellFood/PBKDF2Cypto/bin/Debug/AbPasswdPlugin.dll.mdb
