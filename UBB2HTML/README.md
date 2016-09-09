@@ -26,9 +26,12 @@ logServer 为服务器地址(不含http或者https头，有端口号的带端口
 第三个参数jQuery为jQuery的实例对象
 
 该对象实例化后立即开启日志记录
+
 ##UserLog 对象中的成员##
+
 ####cookieOpt####
 该对象为操作cookie对象
+
 ######cookieOpt.createCookie######
 创建Cookie,
 
@@ -39,9 +42,11 @@ logServer 为服务器地址(不含http或者https头，有端口号的带端口
 * domain:cookie的有效域
 * path:cookie的路径
 * values:若为单个值，则为一个字符串，若有多个值，则为json对象
+* 
 ######cookieOpt.getCookie######
 * name:要获取的cookie的名字
 返回值如果只有一个，则为字符串，否则为json对象，找不到则为null
+
 ######cookieOpt.removeCookie######
 * name:要删除的cookie名字
 ###数据收集action的值###
@@ -50,14 +55,17 @@ logServer 为服务器地址(不含http或者https头，有端口号的带端口
 * action = leave 时表示离开页面
 * action = click 时表示点击页面的链接或按钮
 * action = submit 时表示点击了提交按钮
+* 
 ####setUser####
 参数:
 
 * uid:用户ID;
 * usrName:用户名
 在目标系统登录后设置
+
 ####delUser####
 在目标系统成功登出用户后调用
+
 ####saveInfoToCookie####
 参数 
 
@@ -66,9 +74,12 @@ logServer 为服务器地址(不含http或者https头，有端口号的带端口
 * ckname:cookie名字
 
 其中扩展了jQuery的对象方法
+
 ####bindLogEvent####
 为所选择的元素加上点击事件
+
 ####bindLogSubmit####
 为所选择的元素加上提交事件
+
 ######用法######
 $(选择器).bindLogEvent();
