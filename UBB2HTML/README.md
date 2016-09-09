@@ -42,20 +42,21 @@ logServer 为服务器地址(不含http或者https头，有端口号的带端口
 * domain:cookie的有效域
 * path:cookie的路径
 * values:若为单个值，则为一个字符串，若有多个值，则为json对象
-* 
+
 ######cookieOpt.getCookie######
 * name:要获取的cookie的名字
 返回值如果只有一个，则为字符串，否则为json对象，找不到则为null
 
 ######cookieOpt.removeCookie######
 * name:要删除的cookie名字
+
 ###数据收集action的值###
 * action = jump 时表示页面跳转
 * action = load 时表示页面加载
 * action = leave 时表示离开页面
 * action = click 时表示点击页面的链接或按钮
 * action = submit 时表示点击了提交按钮
-* 
+
 ####setUser####
 参数:
 
